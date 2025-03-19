@@ -2,7 +2,7 @@
 class Solution(object):
     def maxSubArray(self, nums):
         maxs = nums[0]
-        S=0
+        s=0
         for i in range(0,len(nums):
             s+=nums[i]
             if s>maxs:
