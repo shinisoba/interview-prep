@@ -1,4 +1,4 @@
-### Things to remember from the SQL 50 Study Plan on LeetCode
+# Things to remember from the SQL 50 Study Plan on LeetCode
 #### Select Q: Find customer referee
 Table: Customer
 
