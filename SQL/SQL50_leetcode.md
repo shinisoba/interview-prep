@@ -40,7 +40,11 @@ Solution:
 
 
 
+#### Aggregate Functions Q: Not Boring movies
 
+
+Solution:
+*select * from Cinema where MOD(id,2) = 1 and description <> "boring" order by rating desc;*
 
 
 
