@@ -13,6 +13,7 @@ Find the names of the customer that are not referred by the customer with id = 2
 
 Solution: 
 *select name from Customer where referee_id <> 2 or referee_id is null;*
+
 <> : not equal to 
 
 # Learn and explain joins here better
@@ -40,16 +41,19 @@ Solution:
 
 
 #### Aggregate Functions Q: Not Boring movies
+
 | Column Name    | Type     |
 |----------------|----------|
 | id             | int      |
 | movie          | varchar  |
 | description    | varchar  |
 | rating         | float    |
+
 Write a solution to report the movies with an odd-numbered ID and a description that is not "boring".
 
 Solution:
 *select * from Cinema where MOD(id,2) = 1 and description <> "boring" order by rating desc;*
+
 MOD(id,2) : checks for divisibility with 2
 
 
