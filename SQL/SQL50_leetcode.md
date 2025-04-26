@@ -39,12 +39,18 @@ Solution:
 *select unique_id,name from Employees LEFT JOIN EmployeeUNI on Employees.id = EmployeeUNI.id;*
 
 
-
 #### Aggregate Functions Q: Not Boring movies
-
+| Column Name    | Type     |
+|----------------|----------|
+| id             | int      |
+| movie          | varchar  |
+| description    | varchar  |
+| rating         | float    |
+Write a solution to report the movies with an odd-numbered ID and a description that is not "boring".
 
 Solution:
 *select * from Cinema where MOD(id,2) = 1 and description <> "boring" order by rating desc;*
+MOD(id,2) : checks for divisibility with 2
 
 
 
