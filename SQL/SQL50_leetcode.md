@@ -1,5 +1,5 @@
 # Things to remember from the SQL 50 Study Plan on LeetCode
-#### Select Q: Find customer referee
+### Select Q: Find customer referee
 Table: Customer
 
 | Column Name | Type    |
@@ -18,7 +18,7 @@ Solution:
 
 # Learn and explain joins here better
 
-#### Joins Q: Replace employee id with unique Id 
+### Joins Q: Replace employee id with unique Id 
 Table: Employees
 
 | Column Name   | Type    |
@@ -39,7 +39,7 @@ Write a solution to show the unique ID of each user, If a user does not have a u
 Solution:
 **select unique_id,name from Employees LEFT JOIN EmployeeUNI on Employees.id = EmployeeUNI.id;**
 
-#### Joins Q: Product Sales Analysis I 
+### Joins Q: Product Sales Analysis I 
 Table: Sales
 
 | Column Name | Type  |
@@ -68,7 +68,7 @@ Solution:
 First way is to use equi join which returns only the records where the comparing columns have equal values
 Second is to use natural join, which returns columns with the same name of associated tables will appear once only once, automatically identifies the common column.
 
-#### Joins Q: Customer Who Visited but Did not make any transactions 
+### Joins Q: Customer Who Visited but Did not make any transactions 
 Table: Visits
 
 | Column Name | Type    |
@@ -97,7 +97,7 @@ Write a solution to find the IDs of the users who visited without making any tra
 
 
 
-#### Aggregate Functions Q: Not Boring movies
+### Aggregate Functions Q: Not Boring movies
 
 | Column Name    | Type     |
 |----------------|----------|
