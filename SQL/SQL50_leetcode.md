@@ -106,13 +106,14 @@ Solution:
 
 **select w1.id from Weather w1 JOIN Weather w2 ON DATEDIFF(w1.recordDate,w2.recordDate)=1 WHERE w1.temperature > w2.temperature;**
 
-Weather w1, Weather w2: Creates two copies (aliases) of the Weather table (w1 and w2) using old-style cross join.
 
-DATEDIFF(w1.recordDate, w2.recordDate) : Calculates number of days between w1.recordDate and w2.recordDate.
+- Weather w1, Weather w2: Creates two copies (aliases) of the Weather table (w1 and w2) using old-style cross join.
 
-DATEDIFF(w1.recordDate, w2.recordDate) = 1	: Filters to keep only rows where w1 is exactly 1 day after w2.
+- DATEDIFF(w1.recordDate, w2.recordDate) : Calculates number of days between w1.recordDate and w2.recordDate.
 
-w1.temperature > w2.temperature	: Filters to keep only rows where today's (w1) temperature is higher than yesterday's (w2) temperature.
+- DATEDIFF(w1.recordDate, w2.recordDate) = 1	: Filters to keep only rows where w1 is exactly 1 day after w2.
+
+- w1.temperature > w2.temperature	: Filters to keep only rows where today's (w1) temperature is higher than yesterday's (w2) temperature.
 
 ### Aggregate Functions Q: Not Boring movies
 
