@@ -12,7 +12,7 @@ Table: Customer
 Find the names of the customer that are not referred by the customer with id = 2.
 
 Solution: 
-*select name from Customer where referee_id <> 2 or referee_id is null;*
+**select name from Customer where referee_id <> 2 or referee_id is null;**
 
 <> : not equal to 
 
@@ -37,7 +37,46 @@ Table: EmployeeUNI
 Write a solution to show the unique ID of each user, If a user does not have a unique ID replace just show null.
 
 Solution:
-*select unique_id,name from Employees LEFT JOIN EmployeeUNI on Employees.id = EmployeeUNI.id;*
+**select unique_id,name from Employees LEFT JOIN EmployeeUNI on Employees.id = EmployeeUNI.id;**
+
+#### Joins Q: Product Sales Analysis I 
+Table: Sales
+
+| Column Name | Type  |
+|-------------|-------|
+| sale_id     | int   |
+| product_id  | int   |
+| year        | int   |
+| quantity    | int   |
+| price       | int   |
+
+Table: Product
+
+| Column Name  | Type    |
+|--------------|---------|
+| product_id   | int     |
+| product_name | varchar |
+
+Write a solution to report the product_name, year, and price for each sale_id in the Sales table.
+
+Solution:
+
+**select product_name,year,price from Sales INNER JOIN Product on Sales.product_id = Product.product_id;**
+
+**select product_name,year,price from Sales NATURAL JOIN Product;**
+First way is to use equi join which returns only the records where the comparing columns have equal values
+Second is to use natural join, which returns columns with the same name of associated tables will appear once only once, automatically identifies the common column.
+
+
+
+
+
+
+
+
+
+
+
 
 
 #### Aggregate Functions Q: Not Boring movies
@@ -52,7 +91,7 @@ Solution:
 Write a solution to report the movies with an odd-numbered ID and a description that is not "boring".
 
 Solution:
-*select * from Cinema where MOD(id,2) = 1 and description <> "boring" order by rating desc;*
+**select * from Cinema where MOD(id,2) = 1 and description <> "boring" order by rating desc;**
 
 MOD(id,2) : checks for divisibility with 2
 
