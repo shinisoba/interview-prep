@@ -64,10 +64,28 @@ Solution:
 **select product_name,year,price from Sales INNER JOIN Product on Sales.product_id = Product.product_id;**
 
 **select product_name,year,price from Sales NATURAL JOIN Product;**
+
 First way is to use equi join which returns only the records where the comparing columns have equal values
 Second is to use natural join, which returns columns with the same name of associated tables will appear once only once, automatically identifies the common column.
 
+#### Joins Q: Customer Who Visited but Did not make any transactions 
+Table: Visits
 
+| Column Name | Type    |
+|-------------|---------|
+| visit_id    | int     |
+| customer_id | int     |
+
+Table: Transactions
+
+| Column Name    | Type    |
+|----------------|---------|
+| transaction_id | int     |
+| visit_id       | int     |
+| amount         | int     |
+
+
+Write a solution to find the IDs of the users who visited without making any transactions and the number of times they made these types of visits
 
 
 
