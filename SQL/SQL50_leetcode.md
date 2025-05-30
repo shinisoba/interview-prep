@@ -132,10 +132,21 @@ Solution:
 
 MOD(id,2) : checks for divisibility with 2
 
-### Sorting : Write a solution to find all sales that occurred in the first year each product was sold. For each product_id, identify the earliest year it appears in the Sales table.Return all sales entries for that product in that year. Return a table with the following columns: product_id, first_year, quantity, and price. Return the result in any order.
+### Sorting : Product Sales Analysis III 
 
+| Column Name | Type  |
+|-------------|-------|
+| sale_id     | int   |
+| product_id  | int   |
+| year        | int   |
+| quantity    | int   |
+| price       | int   |
+
+Write a solution to find all sales that occurred in the first year each product was sold. For each product_id, identify the earliest year it appears in the Sales table.Return all sales entries for that product in that year. Return a table with the following columns: product_id, first_year, quantity, and price. Return the result in any order.
 
 select product_id, year as first_year, quantity, price from Sales where (product_id, year) in (select product_id, min(year) from Sales group by product_id);
+
+
 
 
 
