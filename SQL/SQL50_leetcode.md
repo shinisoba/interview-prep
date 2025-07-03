@@ -115,6 +115,17 @@ Solution:
 
 - w1.temperature > w2.temperature	: Filters to keep only rows where today's (w1) temperature is higher than yesterday's (w2) temperature.
 
+#### Joins Q: Average Time of process per machine
+There is a factory website that has several machines each running the same number of processes. Write a solution to find the average time each machine takes to complete a process.
+
+The time to complete a process is the 'end' timestamp minus the 'start' timestamp. The average time is calculated by the total time to complete every process on the machine divided by the number of processes that were run.
+
+The resulting table should have the machine_id along with the average time as processing_time, which should be rounded to 3 decimal places.
+
+Return the result table in any order.
+
+select a.machine_id, round(avg(b.timestamp - a.timestamp),3) as processing_time from Activity a INNER JOIN Activity b on a.machine_id = b.machine_id and a.process_id = b.process_id and a.activity_type = 'start' and b.activity_type = 'end' group by a.machine_id;
+
 ### Aggregate Functions Q: Not Boring movies
 
 | Column Name    | Type     |
@@ -145,6 +156,8 @@ MOD(id,2) : checks for divisibility with 2
 Write a solution to find all sales that occurred in the first year each product was sold. For each product_id, identify the earliest year it appears in the Sales table.Return all sales entries for that product in that year. Return a table with the following columns: product_id, first_year, quantity, and price. Return the result in any order.
 
 select product_id, year as first_year, quantity, price from Sales where (product_id, year) in (select product_id, min(year) from Sales group by product_id);
+
+
 
 
 
