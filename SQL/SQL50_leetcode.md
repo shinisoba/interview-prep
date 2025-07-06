@@ -159,7 +159,9 @@ select product_id, year as first_year, quantity, price from Sales where (product
 
 
 
+### Aggregate func: Write a solution to find the average selling price for each product. average_price should be rounded to 2 decimal places. If a product does not have any sold units, its average selling price is assumed to be 0.
 
+**select Prices.product_id, IFNULL(ROUND(SUM(units*price)/SUM(units),2),0) as average_price from Prices LEFT JOIN UnitsSold ON Prices.product_id = UnitsSold.product_id and purchase_date between start_date and end_date group by Prices.product_id;**
 
 
 
