@@ -164,6 +164,19 @@ select product_id, year as first_year, quantity, price from Sales where (product
 **select Prices.product_id, IFNULL(ROUND(SUM(units*price)/SUM(units),2),0) as average_price from Prices LEFT JOIN UnitsSold ON Prices.product_id = UnitsSold.product_id and purchase_date between start_date and end_date group by Prices.product_id;**
 
 
+### Aggregate: Queries quality and percentage
+
+We define query quality as: The average of the ratio between query rating and its position.
+
+We also define poor query percentage as: The percentage of all queries with rating less than 3.
+
+Write a solution to find each query_name, the quality and poor_query_percentage.
+
+Both quality and poor_query_percentage should be rounded to 2 decimal places.
+
+**select query_name, round(avg(rating/position),2) as quality, round(SUM(CASE WHEN rating<3 THEN 1 ELSE 0 END)*100/count(*),2) as poor_query_percentage from Queries where query_name is not NULL group by query_name;** 
+
+CASE WHEN is like if else statement, when and else must be there 
 
 
 
